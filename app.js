@@ -10,18 +10,23 @@ var express = require("express");
 var app= express();
 
 
-
-
+var tancok = [
+{name: "Nádasvölgyiek",kep:""},
+{name: "Paniti", kep:""},
+{name: "Csávási",kep:""}];
 
 
 // routes - here we have the routes 
 // landing page
 app.get("/",function(req,res){
-   // res.send("Itt lesz a sirulo website fo oldala");
     res.render("landing.ejs");
 });
 
 
+//tancok page
+app.get("/tancok",function(req,res){
+    res.render("tancok.ejs",{tancok:tancok});
+});
 
 
 
@@ -33,7 +38,7 @@ app.listen(process.env.PORT,process.env.IP,function(){
 
 
 //-----
-//----------
+//-----
 
 
 
